@@ -22,6 +22,9 @@ peticion.addEventListener('load', function() {
         for (const post of posts) {
             let postCard = document.createElement('aside')
             let heading = document.createElement('h3')
+            let link = document.createElement('a')
+            link.textContent='Ver más'
+            
             let author = []
             author = document.createElement('p')
 
@@ -39,7 +42,9 @@ peticion.addEventListener('load', function() {
             }
             })
             heading.textContent = post.title
+            link.href= `post.html?idPost=${post.id}`
             postCard.appendChild(heading)
+            postCard.appendChild(link)
             postCard.appendChild(author)
             section.appendChild(postCard)
             
